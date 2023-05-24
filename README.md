@@ -47,7 +47,10 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 
 # Section 14
 * Netflix Component Architecture
- work on banner component
+ 1) work on banner component
+
+
+2) navbar 
 
 * Route done for navbar:
 
@@ -57,6 +60,9 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
  
   using use state hook and update setter function with respect to dropdown 
   
-  * card component:
+  
+  3) card component:
   
   in card img error handling using usestate hook
+  
+  framer motion used for hovering effect in caed img
