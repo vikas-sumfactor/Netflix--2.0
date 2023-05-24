@@ -82,6 +82,12 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
   5) Youtube Api 
   
   *  get response and put into json file then fetch data
+
+ # Data Fetching
+ 
+* https://nextjs.org/docs/pages/building-your-application/data-fetching
+
+*https://nextjs.org/docs/pages/building-your-application/data-fetching/get-server-side-props#caching-with-server-side-rendering-ssr
   
   
   
