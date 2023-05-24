@@ -65,4 +65,4 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
   
   in card img error handling using usestate hook
   
-  framer motion used for hovering effect in caed img
+  framer motion used for hovering effect in card img
