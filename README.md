@@ -46,8 +46,8 @@ Setup fonts CSS Variables:
 https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 
 # Section 14
-Netflix Component Architecture
-1) work on banner component
+* Netflix Component Architecture
+ work on banner component
 
 * Route done for navbar:
 
@@ -56,3 +56,7 @@ Netflix Component Architecture
  * Dropdown done for navbar:
  
   using use state hook and update setter function with respect to dropdown 
+  
+  * card component:
+  
+  in card img error handling using usestate hook
