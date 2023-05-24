@@ -49,3 +49,8 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 Netflix Component Architecture
 1) work on banner component
 
+* Route done for navbar
+ https://nextjs.org/docs/pages/api-reference/functions/use-router
+ 
+ * Dropdown done for navbar
+  using use state hook and update setter function with respect to dropdown 
