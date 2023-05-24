@@ -87,7 +87,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
  
 * https://nextjs.org/docs/pages/building-your-application/data-fetching
 
-*https://nextjs.org/docs/pages/building-your-application/data-fetching/get-server-side-props#caching-with-server-side-rendering-ssr
+* https://nextjs.org/docs/pages/building-your-application/data-fetching/get-server-side-props#caching-with-server-side-rendering-ssr
   
   
   
