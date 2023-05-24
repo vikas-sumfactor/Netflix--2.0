@@ -63,15 +63,15 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
   
   3) card component:
   
-  card img error handling using usestate hook
+ * card img error handling using usestate hook
   
-  framer motion used for hovering effect in card img
+ * framer motion used for hovering effect in card img
   
-  npm install framer-motion
+ * npm install framer-motion
   
   
-  also install classnames
+ * also install classnames
   
-  npm install classnames
+ * npm install classnames
   
   
