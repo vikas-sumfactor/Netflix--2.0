@@ -37,10 +37,66 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-
+#
 NEXT JS
 BASIC SETUP: npx create-react-app
 
 Setup fonts CSS Variables:
 
 https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
+
+# Section 14
+* Netflix Component Architecture
+ 1) work on banner component
+
+
+2) navbar 
+
+* Route done for navbar:
+
+ https://nextjs.org/docs/pages/api-reference/functions/use-router
+ 
+ * Dropdown done for navbar:
+ 
+  using use state hook and update setter function with respect to dropdown 
+  
+  
+  3) card component:
+  
+ * card img error handling using usestate hook
+  
+ * framer motion used for hovering effect in card img
+  
+ * npm install framer-motion
+  
+  
+ * also install classnames
+  
+ * npm install classnames
+ 
+ 4) section card
+
+  * wrap card into section card
+  
+  
+  5) Youtube Api 
+  
+  *  get response and put into json file then fetch data
+
+ # Data Fetching
+ 
+* https://nextjs.org/docs/pages/building-your-application/data-fetching
+
+
+* https://nextjs.org/docs/pages/building-your-application/data-fetching/get-server-side-props#caching-with-server-side-rendering-ssr
+
+
+# Youtube api 
+
+* get api key and save into env local file
+
+* made different card section for differnt videos view
+
+  
+  
+  
