@@ -97,6 +97,17 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 
 * made different card section for differnt videos view
 
+
+# Section 15
+
+* sign in page functionality done
+
+* styling done
+
+* email validation done
+
+* use magic for passwordless signin
+
   
   
   
