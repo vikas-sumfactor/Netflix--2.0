@@ -1,22 +1,21 @@
+import Card from './Card'
+import styles from './SectionCard.module.css'
 
-import Card from "./Card";
-import styles from "./Sectioncard.module.css";
+const SectionCard = (props:any) => {
+    const { title, videos=[],size } = props;  
+    // console.log(videos);
+    return (
+        <section className={styles.container}>
+            <h2 className={styles.title}>{title}</h2>
+            <div className={styles.cardWrapper}>
 
-const SectionCards = (props:any) => {
+            {videos.map((video:any,idx:any)=>{
+                return <Card id={idx} imgUrl={video.imgUrl} size={size} />
 
-    const { title, videos, size } = props;
-    console.log({ videos });
-  
-  return (
-    <section className={styles.container}>
-      <h2 className={styles.title}>{title}</h2>
-      <div className={styles.cardWrapper}>
-      {videos.map((video:any, idx:any) => {
-          return <Card key={idx} id={idx} imgUrl={video.imgUrl} size={size} />;
-        })}
-      </div>
-    </section>
-  );
+            })}
+            </div>
+        </section>
+    );
 };
 
-export default SectionCards;
+export default SectionCard;

@@ -4,17 +4,27 @@ import { Inter } from 'next/font/google'
 import styles from "../styles/Home.module.css"
 import Banner from '@/Components/banner/Banner';
 import Navbar from '@/Components/nav/Navbar';
-// import Card from '@/Components/card/Card';
+//  import Card from '@/Components/card/Card';
 import SectionCard from '@/Components/card/SectionCard';
 import { getVideos } from '@/lib/getVideos';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 
-export default function Home() {
+export async function getServerSideProps(context:any){
 
-  const disneyVideos = getVideos();
+  const disneyVideos = await getVideos();
 
+  return {
+    props:{disneyVideos}
+  };
+
+}
+
+
+export default function Home(disneyVideos:any) {
+
+    // console.log({disneyVideos});
 
   return (
     <div className={styles.container}>
