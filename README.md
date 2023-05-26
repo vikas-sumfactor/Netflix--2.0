@@ -39,7 +39,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 # Section 13
 NEXT JS
-BASIC SETUP: npx create-react-app
+BASIC SETUP: 
+             npx create-next-app
 
 Setup fonts CSS Variables:
 
@@ -67,12 +68,12 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
   
  * framer motion used for hovering effect in card img
   
- * npm install framer-motion
+         npm install framer-motion
   
   
  * also install classnames
   
- * npm install classnames
+          npm install classnames
  
  4) section card
 
