@@ -112,6 +112,11 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 * use magic for passwordless signin
 
 
+* use NEXT_PUBLIC as a prefiex to save api key in env local file
+
+  like NEXT_PUBLIC_MAGIC_PUBLISHABLE_API_KEY = our api key data
+
+
         npm install --save magic-sdk
 
 * done loading state and routing
