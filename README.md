@@ -39,8 +39,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 # Section 13
 NEXT JS
-BASIC SETUP: 
-             npx create-next-app
+BASIC SETUP 
+              npx create-next-app
 
 Setup fonts CSS Variables:
 
