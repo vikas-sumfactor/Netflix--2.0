@@ -109,7 +109,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 * use magic for passwordless signin
 
 
-npm install --save magic-sdk
+        npm install --save magic-sdk
 
 * done loading state and routing
 
