@@ -108,6 +108,17 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 
 * use magic for passwordless signin
 
+
+npm install --save magic-sdk
+
+* done loading state and routing
+
+* done sign out functionality
+
+* done username with eamil using useeffect hook
+
+* done login and home page cobined if we click on home
+
   
   
   
