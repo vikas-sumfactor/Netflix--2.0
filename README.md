@@ -39,7 +39,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 # Section 13
 NEXT JS
-BASIC SETUP: npx create-react-app
+
+BASIC SETUP
+
+              npx create-next-app
 
 Setup fonts CSS Variables:
 
@@ -67,12 +70,12 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
   
  * framer motion used for hovering effect in card img
   
- * npm install framer-motion
+         npm install framer-motion
   
   
  * also install classnames
   
- * npm install classnames
+          npm install classnames
  
  4) section card
 
@@ -96,6 +99,28 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 * get api key and save into env local file
 
 * made different card section for differnt videos view
+
+
+# Section 15
+
+* sign in page functionality done
+
+* styling done
+
+* email validation done
+
+* use magic for passwordless signin
+
+
+        npm install --save magic-sdk
+
+* done loading state and routing
+
+* done sign out functionality
+
+* done username with eamil using useeffect hook
+
+* done login and home page cobined if we click on home
 
   
   
