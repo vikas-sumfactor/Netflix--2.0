@@ -40,7 +40,7 @@ export default function Home({disneyVideos,travelVideos,productivityVideos, popu
       </Head>
 
       <div className={styles.main}>
-  <Navbar username = "vikasrana"/>
+  <Navbar />
 
       <Banner 
       title= "Dabbangg "
