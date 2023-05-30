@@ -127,6 +127,21 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 
 * done login and home page combined if we click on home
 
+
+# Section 16
+
+* done dynamic route
+
+* implementation of modal page 
+
+
+       npm install --save react-modal
+       
+       
+       
+  * data fetching
+  
+      https://nextjs.org/docs/pages/building-your-application/data-fetching/incremental-static-regeneration
   
   
   
