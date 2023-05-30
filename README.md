@@ -112,15 +112,20 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 * use magic for passwordless signin
 
 
+* use NEXT_PUBLIC as a prefix to save api key in env local file
+
+  like NEXT_PUBLIC_MAGIC_PUBLISHABLE_API_KEY = our api key data
+
+
         npm install --save magic-sdk
 
 * done loading state and routing
 
 * done sign out functionality
 
-* done username with eamil using useeffect hook
+* done username with eamil using useEffect hook
 
-* done login and home page cobined if we click on home
+* done login and home page combined if we click on home
 
   
   
