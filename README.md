@@ -142,6 +142,12 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
   * data fetching
   
       https://nextjs.org/docs/pages/building-your-application/data-fetching/incremental-static-regeneration
+      
+   # Section 17
+   
+     * GRAPHQL
+     
+     https://graphql.org/
   
   
   
