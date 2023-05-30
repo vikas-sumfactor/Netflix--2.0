@@ -42,7 +42,8 @@ export default function Home({disneyVideos,travelVideos,productivityVideos, popu
       <div className={styles.main}>
   <Navbar />
 
-      <Banner 
+      <Banner
+      videoId="4zH5iYM4wJo" 
       title= "Dabbangg "
       subTitle ="Robin Hood"
       imgUrl = "/static/poster-3.jpg"
