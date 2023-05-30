@@ -148,6 +148,17 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
      * GRAPHQL
      
      https://graphql.org/
+     
+     
+     * HASURA
+     
+       https://hasura.io/
+       
+       
+      * get secret key and url  and put in env file 
+       
+       
+      * done table in hasura with neon and updated the data with mutation in explorer and by using code exporter get the code
   
   
   
