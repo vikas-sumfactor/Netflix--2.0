@@ -159,6 +159,15 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
        
        
        * done table in hasura with neon and updated the data with mutation in explorer and by using code exporter get the code
+      
+      * JWT 
+
+         https://jwt.io/
+         
+         
+       * Authentication Using JWTs
+       
+       https://hasura.io/docs/latest/auth/authentication/jwt/
   
   
   
