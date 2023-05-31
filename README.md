@@ -55,7 +55,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 
 2) navbar 
 
-* Route done for navbar:
+ * Route done for navbar:
 
  https://nextjs.org/docs/pages/api-reference/functions/use-router
  
@@ -142,6 +142,32 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
   * data fetching
   
       https://nextjs.org/docs/pages/building-your-application/data-fetching/incremental-static-regeneration
+      
+   # Section 17
+   
+     * GRAPHQL
+     
+     https://graphql.org/
+     
+     
+     * HASURA
+     
+       https://hasura.io/
+       
+       
+       * get secret key and url  and put in env file 
+       
+       
+       * done table in hasura with neon and updated the data with mutation in explorer and by using code exporter get the code
+      
+      * JWT 
+
+         https://jwt.io/
+         
+         
+       * Authentication Using JWTs
+       
+       https://hasura.io/docs/latest/auth/authentication/jwt/
   
   
   
