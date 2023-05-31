@@ -165,7 +165,7 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
             https://jwt.io/
          
          
-      * Authentication Using JWTs
+     * Authentication Using JWTs
        
             https://hasura.io/docs/latest/auth/authentication/jwt/
   
