@@ -5,7 +5,10 @@ async function queryHasuraGQL(operationsDoc:any, operationName:any, variables:an
     const result = await fetch(url, {
       method: "POST",
       headers: {
-        "x-hasura-admin-secret": process.env.NEXT_PUBLIC_HASURA_ADMIN_SECRET,
+        Authorization :
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNjg1NTE0MjEzLCJleHAiOjE2ODYxMTkwNjIsImh0dHBzOi8vaGFzdXJhLmlvL2p3dC9jbGFpbXMiOnsieC1oYXN1cmEtYWxsb3dlZC1yb2xlcyI6WyJ1c2VyIiwiYWRtaW4iXSwieC1oYXN1cmEtZGVmYXVsdC1yb2xlIjoidXNlciIsIngtaGFzdXJhLXVzZXItaWQiOiJub3R2aWthcyJ9fQ.DE9-UmDhFwwpnHMDYIPuwx-YNLuzFioCAWZo0NO1RaY"
+       
+       // "x-hasura-admin-secret": process.env.NEXT_PUBLIC_HASURA_ADMIN_SECRET,
       },
       body: JSON.stringify({
         query: operationsDoc,
