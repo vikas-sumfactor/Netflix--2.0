@@ -7,7 +7,7 @@ import Navbar from '@/Components/nav/Navbar';
 //  import Card from '@/Components/card/Card';
 import SectionCard from '@/Components/card/SectionCard';
 import { getVideos,getPopularVideos } from "@/lib/videos";
-import { startFetchMyQuery } from '@/lib/db/hasura';
+// import { startFetchMyQuery } from '@/lib/db/hasura';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -32,7 +32,7 @@ export async function getServerSideProps(context:any){
 export default function Home({disneyVideos,travelVideos,productivityVideos, popularVideos,}) {
 
     // console.log({disneyVideos});
-    startFetchMyQuery();
+    // startFetchMyQuery();
   return (
     <div className={styles.container}>
       <Head>

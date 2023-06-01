@@ -18,6 +18,7 @@
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.3",
     "framer-motion": "^10.12.14",
+    "jsonwebtoken": "^9.0.0",
     "magic-sdk": "^17.2.1",
     "next": "13.4.3",
     "postcss": "8.4.23",
@@ -26,5 +27,8 @@
     "react-modal": "^3.16.1",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.2"
   }
 }

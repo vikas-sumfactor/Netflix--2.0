@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { useState , useEffect} from "react";
 import Image from "next/image";
 import { magic } from "../../lib/magic-cilent";
+// import Link from "next/link";
 
 const NavBar = (props:any) => {
   
@@ -15,7 +16,7 @@ const NavBar = (props:any) => {
   useEffect(() => {
     async function getUsername() {
       try {
-        const { email, issuer } = await magic.user.getMetadata();
+        const { email, publicAddress } = await magic.user.getMetadata();
 
         const didToken = await magic.user.getIdToken();
 
@@ -116,3 +117,4 @@ const handleSignout = async (e:any) => {
   );
 };
 export default NavBar;
+
