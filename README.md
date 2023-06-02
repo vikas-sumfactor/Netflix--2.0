@@ -212,5 +212,9 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
             
    
                 npm i cookies
+                
+                
+     * when i sign in then automatically data will create in hasura by run query 
+       and data will shown in browse row section of particular users          
   
   
