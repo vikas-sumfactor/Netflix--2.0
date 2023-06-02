@@ -204,6 +204,13 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
             
             
         4) store token as a cookies   
-  
+
+    * HTTP cookies
+   
+   
+            https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
+            
+   
+                npm i cookies
   
   
