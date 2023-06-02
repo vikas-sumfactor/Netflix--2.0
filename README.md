@@ -181,6 +181,29 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
        You can invoke the URL directly to use Postman. You don't need to configure any environment to use this. Take a look at the docs to see how to use it:
               
               https://learning.postman.com/docs/getting-started/sending-the-first-request/
+              
+              
+   * login api :
+        
+        1) authorization token : did token get from magic auth
+
+
+        2) create new jwt token 
+
+
+           then check if this a new user or not in Hasura (GQL QUERY)
+           
+           
+           if yes then
+           
+           
+        3) create new user GQL MUTATION then store token as a cookies
+
+
+            if no then
+            
+            
+        4) store token as a cookies   
   
   
   
