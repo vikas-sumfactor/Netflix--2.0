@@ -168,6 +168,53 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
      * Authentication Using JWTs
        
             https://hasura.io/docs/latest/auth/authentication/jwt/
-  
+            
+            
+    # Section 18
+    
+    * What is Postman?
+
+        It is a tool to invoke your API's. Since you can invoke only GET requests in the browser, you need a client like POSTMAN. Postman enables you to create and send API requests. Send         a request to an endpoint, retrieve data from a data source, or test an API's functionality. You don't need to enter commands in a terminal or write any code. Create a new request           and select Send, and the API response appears right inside Postman.
+
+  * How to use it:
+
+       You can invoke the URL directly to use Postman. You don't need to configure any environment to use this. Take a look at the docs to see how to use it:
+              
+              https://learning.postman.com/docs/getting-started/sending-the-first-request/
+              
+              
+   * login api :
+        
+        1) authorization token : did token get from magic auth
+
+
+        2) create new jwt token 
+
+
+           then check if this a new user or not in Hasura (GQL QUERY)
+           
+           
+           if yes then
+           
+           
+        3) create new user GQL MUTATION then store token as a cookies
+
+
+            if no then
+            
+            
+        4) store token as a cookies   
+
+    * HTTP cookies
+   
+   
+            https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
+            
+   
+                npm i cookies
+                
+                
+     * when i sign in then automatically data will create in hasura by run query 
+       and data will shown in browse row section of particular users          
   
   
