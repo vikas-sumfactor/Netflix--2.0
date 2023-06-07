@@ -45,8 +45,8 @@ const Login = () => {
   
         //  log in a user by their email
         try {
-          const didToken = await magic.auth.loginWithMagicLink({
-            email,
+          const didToken:string = await magic.auth.loginWithMagicLink({
+            email,showUI: false
           });
           console.log({ didToken });
           if (didToken) {

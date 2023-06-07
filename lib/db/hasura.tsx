@@ -1,5 +1,32 @@
 
 
+
+export async function findVideoIdByUser(token, userId, videoId) {
+  const operationsDoc = `
+  query findVideoIdByUserId($userId: String!, $videoId: String!) {
+    stats(where: { userId: {_eq: $userId}, videoId: {_eq: $videoId }}) {
+      id
+      userId
+      videoId
+      favourited
+      watched
+    }
+  }
+`;
+
+  const response = await queryHasuraGQL(
+    operationsDoc,
+    "findVideoIdByUserId",
+    {
+      videoId,
+      userId,
+    },
+    token
+  );
+
+  return response?.data?.stats.length === 0;
+}
+
 export async function createNewUser(token:any, metadata:any) {
   const operationsDoc = `
   mutation createNewUser($issuer: String, $email:String, $publicAddress:String){

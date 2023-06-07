@@ -57,7 +57,7 @@ export default function Home({disneyVideos,travelVideos,productivityVideos, popu
 
         <SectionCard title="Productivity" videos={productivityVideos}  size="medium" />
 
-        <SectionCard title="Popular" videos={disneyVideos} size="small" />
+        <SectionCard title="Watch it again" videos={disneyVideos} size="small" />
 
         <SectionCard title="Popular" videos={popularVideos} size="small" />
 
