@@ -1,72 +1,64 @@
 import jwt from "jsonwebtoken";
 import {
   findVideoIdByUser,
-  insertStats,
   updateStats,
+  insertStats,
 } from "../../lib/db/hasura";
+
 export default async function stats(req, resp) {
-  if (req.method === "POST") {
-    try {
-      const token = req.cookies.token;
-      if (!token) {
-        resp.status(403).send({});
-      } else {
-        const { videoId, favourited, watched = true } = req.body;
+  try {
+    const token = req.cookies.token;
+    if (!token) {
+      resp.status(403).send({});
+    } else {
+      const inputParams = req.method === "POST" ? req.body : req.query;
+      const { videoId } = inputParams;
+      if (videoId) {
+        const decodedToken = jwt.verify(token, process.env.JWT_SECRET_KEY);
 
-        if (videoId) {
-          const decodedToken = jwt.verify(token, process.env.JWT_SECRET_KEY);
+        const userId = decodedToken.issuer;
+        const findVideo = await findVideoIdByUser(token, userId, videoId);
+        const doesStatsExist = findVideo?.length > 0;
 
-          const userId = decodedToken.issuer;
-          const doesStatsExist = await findVideoIdByUser(
-            token,
-            userId,
-            videoId
-          );
+        if (req.method === "POST") {
+          const { favourited, watched = true } = req.body;
           if (doesStatsExist) {
             // update it
+
+  
             const response = await updateStats(token, {
               watched,
               userId,
               videoId,
               favourited,
             });
-            resp.send({ msg: "it works", response });
+            resp.send({ data: response });
           } else {
             // add it
+            console.log({ watched, userId, videoId, favourited });
             const response = await insertStats(token, {
               watched,
               userId,
-              videoId,
-              favourited,
-            });
-            resp.send({ msg: "it works", response });
-          }
-        }
-      }
-    } catch (error) {
 
     
   
-      console.error("Error occurred /stats", error);
-      resp.status(500).send({ done: false, error: error?.message });
+              videoId,
+              favourited,
+            });
+            resp.send({ data: response });
+          }
+        } else {
+          if (doesStatsExist) {
+            resp.send(findVideo);
+          } else {
+            resp.status(404);
+            resp.send({ user: null, msg: "Video not found" });
+          }
+        }
+      }
     }
+  } catch (error) {
+    console.error("Error occurred /stats", error);
+    resp.status(500).send({ done: false, error: error?.message });
   }
 }
-
-
-// export default async function stats(req, resp) {
-//   if (req.method === "POST") {
-//     console.log({ cookies: req.cookies });
-
-//     try {
-//       if (!req.cookies.token) {
-//         resp.status(403).send({});
-//       } else {
-//         resp.send({ msg: "it works" });
-//       }
-//     } catch (error) {
-//       console.error("Error occurred /stats", error);
-//       resp.status(500).send({ done: false, error: error?.message });
-//     }
-//   }
-// }

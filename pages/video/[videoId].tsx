@@ -8,7 +8,7 @@ import { getYoutubeVideoById } from "../../lib/videos";
 import NavBar from "@/Components/nav/Navbar";
 import Like from "@/Components/icons/Like";
 import DisLike from "@/Components/icons/Dislike";
-import { useState } from "react";
+import { useState ,useEffect } from "react";
 
 
 
@@ -43,6 +43,24 @@ const Video = ({ video }) => {
     statistics: { viewCount } = { viewCount: 0 },
   } = video;
 
+  useEffect(() => {
+    const handleLikeDislikeService = async () => {
+      const response = await fetch(`/api/stats?videoId=${videoId}`, {
+        method: "GET",
+      });
+      const data = await response.json();
+
+      if (data.length > 0) {
+        const favourited = data[0].favourited;
+        if (favourited === 1) {
+          setToggleLike(true);
+        } else if (favourited === 0) {
+          setToggleDisLike(true);
+        }
+      }
+    };
+    handleLikeDislikeService();
+  }, [videoId]);
   const runRatingService = async (favourited) => {
     return await fetch("/api/stats", {
       method: "POST",
