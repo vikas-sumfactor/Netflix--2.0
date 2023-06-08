@@ -6,13 +6,24 @@ import Banner from '@/Components/banner/Banner';
 import Navbar from '@/Components/nav/Navbar';
 //  import Card from '@/Components/card/Card';
 import SectionCard from '@/Components/card/SectionCard';
-import { getVideos,getPopularVideos } from "@/lib/videos";
+import {
+  getPopularVideos,
+  getVideos,
+  getWatchItAgainVideos,
+} from "../lib/videos";
 // import { startFetchMyQuery } from '@/lib/db/hasura';
 
 const inter = Inter({ subsets: ['latin'] });
 
 
 export async function getServerSideProps(context:any){
+
+  const userId = "";
+  const token = "";
+
+  const watchItAgainVideos = await getWatchItAgainVideos(userId, token);
+
+  console.log({ watchItAgainVideos });
 
   const disneyVideos = await getVideos("disney trailer");
 
@@ -23,13 +34,21 @@ export async function getServerSideProps(context:any){
   const popularVideos = await getPopularVideos();
 
   return {
-    props:{disneyVideos,travelVideos, productivityVideos, popularVideos}
+    props: {
+      disneyVideos,
+      travelVideos,
+      productivityVideos,
+      popularVideos,
+      watchItAgainVideos,
+    },
   };
 
 }
 
 
-export default function Home({disneyVideos,travelVideos,productivityVideos, popularVideos,}) {
+export default function Home({disneyVideos,travelVideos,productivityVideos, popularVideos, watchItAgainVideos,}) {
+
+  console.log({ watchItAgainVideos });
 
     // console.log({disneyVideos});
     // startFetchMyQuery();
