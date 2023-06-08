@@ -1,16 +1,30 @@
 
-const operationsDoc1 = `
-  mutation insertStats($favourited: Int!, $userId: 
-  String!, $watched: Boolean!, $videoId: String!) {
-    insert_stats_one(object: {favourited: $favourited, 
-    userId: $userId, watched: $watched, videoId: $videoId}
-    ) {
-      favourited
-      id
-      userId
+export async function insertStats(
+  token,
+  { favourited, userId, watched, videoId }
+) {
+  const operationsDoc = `
+  mutation insertStats($favourited: Int!, $userId: String!, $watched: Boolean!, $videoId: String!) {
+    insert_stats_one(object: {
+      favourited: $favourited, 
+      userId: $userId, 
+      watched: $watched, 
+      videoId: $videoId
+    }) {
+        favourited
+        id
+        userId
     }
   }
 `;
+
+  return await queryHasuraGQL(
+    operationsDoc,
+    "insertStats",
+    { favourited, userId, watched, videoId },
+    token
+  );
+}
 
 export async function updateStats(
   token,
@@ -19,7 +33,7 @@ export async function updateStats(
   const operationsDoc = `
 mutation updateStats($favourited: Int!, $userId: String!, $watched: Boolean!, $videoId: String!) {
   update_stats(
-    _set: {watched: $watched}, 
+    _set: {watched: $watched, favourited: $favourited}, 
     where: {
       userId: {_eq: $userId}, 
       videoId: {_eq: $videoId}
@@ -33,17 +47,13 @@ mutation updateStats($favourited: Int!, $userId: String!, $watched: Boolean!, $v
   }
 }
 `;
-
-  const response = await queryHasuraGraphQL(
+  return await queryHasuraGQL(
     operationsDoc,
     "updateStats",
     { favourited, userId, watched, videoId },
     token
   );
-
-  return response;
 }
-
 export async function findVideoIdByUser(token, userId, videoId) {
   const operationsDoc = `
   query findVideoIdByUserId($userId: String!, $videoId: String!) {
@@ -56,8 +66,7 @@ export async function findVideoIdByUser(token, userId, videoId) {
     }
   }
 `;
-
-  const response = await queryHasuraGraphQL(
+  const response = await queryHasuraGQL(
     operationsDoc,
     "findVideoIdByUserId",
     {
@@ -66,80 +75,68 @@ export async function findVideoIdByUser(token, userId, videoId) {
     },
     token
   );
-
-  return response?.data?.stats.length > 0;
+  return response?.data?.stats.length === 0;
 }
-
-export async function createNewUser(token:any, metadata:any) {
+export async function createNewUser(token, metadata) {
   const operationsDoc = `
-  mutation createNewUser($issuer: String, $email:String, $publicAddress:String){
+  mutation createNewUser($issuer: String!, $email: String!, $publicAddress: String!) {
     insert_users(objects: {email: $email, issuer: $issuer, publicAddress: $publicAddress}) {
       returning {
-        issuer
-        id
         email
+        id
+        issuer
       }
     }
   }
 `;
-
   const { issuer, email, publicAddress } = metadata;
-  const response = await queryHasuraGraphQL(
-      operationsDoc,
-      "createNewUser",
-      {
-          issuer,
-          email,
-          publicAddress,
-      },
-      token,
+  const response = await queryHasuraGQL(
+    operationsDoc,
+    "createNewUser",
+    {
+      issuer,
+      email,
+      publicAddress,
+    },
+    token
   );
   console.log({ response, issuer });
   return response;
 }
-
-
-export async function isNewUser(token:any, issuer:any) {
+export async function isNewUser(token, issuer) {
   const operationsDoc = `
-  query isNewUser($issuer:String!) {
-    users(where: {_and: {issuer: {_eq: $issuer}}}) {
-      email
+  query isNewUser($issuer: String!) {
+    users(where: {issuer: {_eq: $issuer}}) {
       id
+      email
       issuer
     }
   }
 `;
-  const response = await queryHasuraGraphQL(
-      operationsDoc,
-      "isNewUser",
-      {
-          issuer,
-      },
-      token,
+  const response = await queryHasuraGQL(
+    operationsDoc,
+    "isNewUser",
+    {
+      issuer,
+    },
+    token
   );
   console.log({ response, issuer });
   return response?.data?.users?.length === 0;
 }
-
-async function queryHasuraGraphQL(operationsDoc:any, operationName:any, variables:any, token:any) {
-
+async function queryHasuraGQL(operationsDoc, operationName, variables, token) {
   const url:any = process.env.NEXT_PUBLIC_HASURA_ADMIN_URL;
-
-  const result = await fetch(
-      url,
-      {
-          method: "POST",
-          headers: {
-              Authorization: `Bearer ${token}`,
-              'Content-type': 'application/json',
-          },
-          body: JSON.stringify({
-              query: operationsDoc,
-              variables: variables,
-              operationName: operationName
-          })
-      }
-  );
-
+  const result = await fetch(url, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({
+      query: operationsDoc,
+      variables: variables,
+      operationName: operationName,
+    }),
+  });
   return await result.json();
 }
