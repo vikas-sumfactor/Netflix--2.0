@@ -1,4 +1,3 @@
-
 export async function insertStats(
   token,
   { favourited, userId, watched, videoId }
