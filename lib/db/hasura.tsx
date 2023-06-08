@@ -1,5 +1,48 @@
 
+const operationsDoc1 = `
+  mutation insertStats($favourited: Int!, $userId: 
+  String!, $watched: Boolean!, $videoId: String!) {
+    insert_stats_one(object: {favourited: $favourited, 
+    userId: $userId, watched: $watched, videoId: $videoId}
+    ) {
+      favourited
+      id
+      userId
+    }
+  }
+`;
 
+export async function updateStats(
+  token,
+  { favourited, userId, watched, videoId }
+) {
+  const operationsDoc = `
+mutation updateStats($favourited: Int!, $userId: String!, $watched: Boolean!, $videoId: String!) {
+  update_stats(
+    _set: {watched: $watched}, 
+    where: {
+      userId: {_eq: $userId}, 
+      videoId: {_eq: $videoId}
+    }) {
+    returning {
+      favourited,
+      userId,
+      watched,
+      videoId
+    }
+  }
+}
+`;
+
+  const response = await queryHasuraGraphQL(
+    operationsDoc,
+    "updateStats",
+    { favourited, userId, watched, videoId },
+    token
+  );
+
+  return response;
+}
 
 export async function findVideoIdByUser(token, userId, videoId) {
   const operationsDoc = `
@@ -14,7 +57,7 @@ export async function findVideoIdByUser(token, userId, videoId) {
   }
 `;
 
-  const response = await queryHasuraGQL(
+  const response = await queryHasuraGraphQL(
     operationsDoc,
     "findVideoIdByUserId",
     {
@@ -24,7 +67,7 @@ export async function findVideoIdByUser(token, userId, videoId) {
     token
   );
 
-  return response?.data?.stats.length === 0;
+  return response?.data?.stats.length > 0;
 }
 
 export async function createNewUser(token:any, metadata:any) {
