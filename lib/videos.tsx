@@ -1,4 +1,5 @@
 import videoTestData from "../data/videos.json";
+import { getWatchedVideos } from "./db/hasura";
 
 const fetchVideos = async (url:any) => {
   const YOUTUBE_API_KEY = process.env.YOUTUBE_API_KEY;
@@ -54,3 +55,7 @@ export const getYoutubeVideoById = (videoId:any) => {
   const URL = `videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}`;
   return getCommonVideos(URL);
 };
+export const getWatchItAgainVideos = async (userId, token) => {
+  const videos = await getWatchedVideos(userId, token);
+  return videos;
+}
