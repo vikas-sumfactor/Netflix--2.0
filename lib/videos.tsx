@@ -57,5 +57,12 @@ export const getYoutubeVideoById = (videoId:any) => {
 };
 export const getWatchItAgainVideos = async (userId, token) => {
   const videos = await getWatchedVideos(userId, token);
-  return videos;
+  
+  return (
+    videos?.map((video) => {
+      return {
+        id: video.videoId,
+      };
+    }) || []
+  );
 }

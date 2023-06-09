@@ -21,8 +21,9 @@ export async function getServerSideProps(context:any){
   const userId = "";
   const token = "";
 
+ 
   const watchItAgainVideos = await getWatchItAgainVideos(userId, token);
-
+  
   console.log({ watchItAgainVideos });
 
   const disneyVideos = await getVideos("disney trailer");
@@ -46,7 +47,7 @@ export async function getServerSideProps(context:any){
 }
 
 
-export default function Home({disneyVideos,travelVideos,productivityVideos, popularVideos, watchItAgainVideos,}) {
+export default function Home({disneyVideos,travelVideos,productivityVideos, popularVideos, watchItAgainVideos}) {
 
   console.log({ watchItAgainVideos });
 
@@ -71,12 +72,17 @@ export default function Home({disneyVideos,travelVideos,productivityVideos, popu
 
 <div className={styles.sectionWrapper}>
     <SectionCard title="Disney" videos={disneyVideos} size="large" />
+        <SectionCard
+            title="Watch it again"
+            videos={watchItAgainVideos}
+            size="small"
+          />
 
        <SectionCard title="Travel" videos={travelVideos} size="small" />
 
         <SectionCard title="Productivity" videos={productivityVideos}  size="medium" />
 
-        <SectionCard title="Watch it again" videos={disneyVideos} size="small" />
+      
 
         <SectionCard title="Popular" videos={popularVideos} size="small" />
 
