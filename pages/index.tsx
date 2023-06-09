@@ -6,6 +6,9 @@ import Banner from '@/Components/banner/Banner';
 import Navbar from '@/Components/nav/Navbar';
 //  import Card from '@/Components/card/Card';
 import SectionCard from '@/Components/card/SectionCard';
+import { redirectUser } from "../utils/redirectUser";
+
+
 import {
   getPopularVideos,
   getVideos,
@@ -18,12 +21,21 @@ const inter = Inter({ subsets: ['latin'] });
 
 export async function getServerSideProps(context:any){
 
-  const userId = "";
-  const token = "";
+  const { userId, token } = await redirectUser(context);
+
+  if (!userId) {
+    return {
+      props: {},
+      redirect: {
+        destination: "/login",
+        permanent: false,
+      },
+    };
+  }
 
  
   const watchItAgainVideos = await getWatchItAgainVideos(userId, token);
-  
+
   console.log({ watchItAgainVideos });
 
   const disneyVideos = await getVideos("disney trailer");
@@ -72,8 +84,7 @@ export default function Home({disneyVideos,travelVideos,productivityVideos, popu
 
 <div className={styles.sectionWrapper}>
     <SectionCard title="Disney" videos={disneyVideos} size="large" />
-        <SectionCard
-            title="Watch it again"
+        <SectionCard title="Watch it again"
             videos={watchItAgainVideos}
             size="small"
           />
