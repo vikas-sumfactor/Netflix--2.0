@@ -43,7 +43,7 @@ const handleOnClickHome = (e:any) =>{
 
 const handleOnClickMyList = (e:any) =>{
   e.preventDefault();
-  router.push('/browse/MyList');
+  router.push('/browse/my-list');
 
 }
 
