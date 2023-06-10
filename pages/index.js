@@ -16,10 +16,10 @@ import {
 } from "../lib/videos";
 // import { startFetchMyQuery } from '@/lib/db/hasura';
 
-const inter = Inter({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin'] });
 
 
-export async function getServerSideProps(context:any){
+export async function getServerSideProps(context){
 
   const { userId, token } = await redirectUser(context);
 

@@ -3,7 +3,7 @@ import styles from "./Banner.module.css"
 import { useRouter } from "next/router";
 
 
-const Banner  = (props:any) =>{
+const Banner  = (props) =>{
   const { title, subTitle, imgUrl, videoId } = props;
   const router = useRouter();
 

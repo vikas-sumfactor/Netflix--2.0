@@ -7,11 +7,11 @@ import { motion } from "framer-motion";
 
 
 
-export default function Card(props:any) {
+export default function Card(props) {
     const { imgUrl = "https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1159&q=80", size = "medium", id , shouldScale = true,} = props;
 
     const [imgSrc, setImgSrc] = useState(imgUrl);
-    const classMap:any = {
+    const classMap = {
         "large": styles.lgItem,
         "medium": styles.mdItem,
         "small": styles.smItem,

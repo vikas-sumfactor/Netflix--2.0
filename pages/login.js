@@ -27,13 +27,13 @@ const Login = () => {
     
 
   
-  const handleOnChangeEmail = (e:any) => {
+  const handleOnChangeEmail = (e) => {
     setUserMsg("");
     console.log("event", e);
     const email = e.target.value;
     setEmail(email);
   };
-  const handleLoginWithEmail = async (e:any) => {
+  const handleLoginWithEmail = async (e) => {
     console.log("hi button");
     e.preventDefault();
     setIsLoading(true);
@@ -45,7 +45,7 @@ const Login = () => {
   
         //  log in a user by their email
         try {
-          const didToken:string = await magic.auth.loginWithMagicLink({
+          const didToken = await magic.auth.loginWithMagicLink({
             email,showUI: false
           });
           console.log({ didToken });

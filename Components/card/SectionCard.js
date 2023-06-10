@@ -3,7 +3,7 @@ import Link from 'next/link';
 import styles from './SectionCard.module.css'
 import clsx from "classnames";
 
-const SectionCard = (props:any) => {
+const SectionCard = (props) => {
   const { title, videos = [], size, shouldWrap = false, shouldScale } = props;
     // console.log(videos);
     return (
@@ -11,7 +11,7 @@ const SectionCard = (props:any) => {
             <h2 className={styles.title}>{title}</h2>
             <div className={clsx(styles.cardWrapper, shouldWrap && styles.wrap)}>
 
-            {videos.map((video:any,idx:any)=>{
+            {videos.map((video,idx)=>{
                     console.log({ video });
                     return (
                       <Link legacyBehavior href={`/video/${video.id}`} key={video.id}>

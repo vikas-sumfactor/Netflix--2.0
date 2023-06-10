@@ -5,7 +5,7 @@ import Image from "next/image";
 import { magic } from "../../lib/magic-cilent";
 // import Link from "next/link";
 
-const NavBar = (props:any) => {
+const NavBar = (props) => {
   
   const[showDropdown , setShowDropdown] = useState(false);
 
@@ -35,25 +35,25 @@ const NavBar = (props:any) => {
 
  
 
-const handleOnClickHome = (e:any) =>{
+const handleOnClickHome = (e) =>{
   e.preventDefault();
   router.push('/');
 
 }
 
-const handleOnClickMyList = (e:any) =>{
+const handleOnClickMyList = (e) =>{
   e.preventDefault();
   router.push('/browse/my-list');
 
 }
 
-const handleShowDropdown = (e:any) =>{
+const handleShowDropdown = (e) =>{
   e.preventDefault();
   setShowDropdown(!showDropdown);
 }
 
 
-const handleSignout = async (e:any) => {
+const handleSignout = async (e) => {
   e.preventDefault();
 
   try {
