@@ -5,38 +5,35 @@ import "../styles/globals.css";
 
 import Loading from "../Components/loading/Loading";
 
-function MyApp({ Component, pageProps }) {
+export default function App({ Component, pageProps }) {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
 
-    
-    
-  
   useEffect(() => {
-    // const handleLoggedIn = async () => {
-    //   const isLoggedIn = await magic.user.isLoggedIn();
-    //   if (isLoggedIn) {
-    //     // route to /
-    //     router.push("/");
-    //   } else {
-    //     // route to /login
-    //     router.push("/login");
-    //   }
-    // };
-    // handleLoggedIn();
+    const handleLoggedIn = async () => {
+      const isLoggedIn = await magic.user.isLoggedIn();
+      if (isLoggedIn) {
+        router.push("/");
+      } else {
+        router.push("/login");
+      }
+    };
+    handleLoggedIn();
   }, []);
+
   useEffect(() => {
     const handleComplete = () => {
       setIsLoading(false);
-    };
-    router.events.on("routeChangeComplete", handleComplete);
-    router.events.on("routeChangeError", handleComplete);
-    return () => {
-      router.events.off("routeChangeComplete", handleComplete);
-      router.events.off("routeChangeError", handleComplete);
-    };
-  }, [router]);
-  return isLoading ? <Loading /> : <Component {...pageProps} />;
-}
+    }
 
-export default MyApp;
+    router.events.on('routerChangeComplelte', handleComplete);
+    router.events.on('routerChangeError', handleComplete);
+
+    return () => {
+      router.events.off('routerChangeComplelte', handleComplete);
+      router.events.off('routerChangeError', handleComplete);
+    }
+  }, [router]);
+
+  return isLoading ? <Loading /> : <Component {...pageProps} />
+}
