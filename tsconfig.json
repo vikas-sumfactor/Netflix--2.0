@@ -18,6 +18,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/login.js", "pages/api/stats.js", "Components/banner/Banner.js", "Components/card/Card.js", "Components/card/SectionCard.js", "Components/icons/Dislike.js", "Components/icons/Like.js", "Components/loading/Loading.js", "Components/nav/Navbar.js", "lib/db/hasura.js", "lib/cookies.js", "lib/magic-cilent.js", "lib/magic.js", "lib/videos.js", "pages/_app.js", "pages/index.js", "pages/login.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/api/login.js", "pages/api/stats.js", "Components/banner/Banner.js", "Components/card/Card.js", "Components/card/SectionCard.js", "Components/icons/Dislike.js", "Components/icons/Like.js", "Components/loading/Loading.js", "Components/nav/Navbar.js", "lib/db/hasura.js", "lib/cookies.js", "lib/magic-cilent.js", "lib/magic.js", "lib/videos.js", "pages/_app.js", "pages/index.js", "pages/login.js", "pages/api/hello.js"],
   "exclude": ["node_modules"]
 }
