@@ -231,6 +231,14 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
    Render Watch it again 
    
    done my list 
+   
+   
+   
+   # Section 20
+      
+      * MiddleWare
+   
+       https://nextjs.org/docs/pages/building-your-application/routing/middleware
   
   
   

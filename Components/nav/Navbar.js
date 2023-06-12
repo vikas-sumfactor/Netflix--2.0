@@ -21,7 +21,7 @@ const NavBar = (props) => {
         const didToken = await magic.user.getIdToken();
 
         
-        console.log({ didToken });
+    //    console.log({ didToken });
         
         if (email) {
           setUsername(email);

@@ -8,7 +8,7 @@ export async function middleware(req, ev) {
 
   if (
     pathname.includes("/api/login") ||
-    userId ||
+    userId || token ||
     pathname.includes("/static")
   ) {
     return NextResponse.next();
