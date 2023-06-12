@@ -239,6 +239,11 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
       * MiddleWare
    
        https://nextjs.org/docs/pages/building-your-application/routing/middleware
+       
+       
+  # Section 21
+       
+        . Deployment done
   
   
   
