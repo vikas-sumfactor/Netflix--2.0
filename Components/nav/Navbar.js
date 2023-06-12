@@ -1,4 +1,4 @@
-import styles from "./navbar.module.css";
+import styles from "./Navbar.module.css";
 import { useRouter } from "next/router";
 import { useState , useEffect} from "react";
 import Image from "next/image";
